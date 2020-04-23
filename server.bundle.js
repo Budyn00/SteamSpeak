@@ -399,7 +399,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(42);
-/* harmony import */ var _docusaurus_isInternalUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93);
+/* harmony import */ var _docusaurus_isInternalUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(92);
 /* harmony import */ var _docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(57);
 /* harmony import */ var _docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_4__);
 /**
@@ -423,7 +423,7 @@ react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a",Object(_home_trav
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(95);
+/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(94);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -1408,7 +1408,7 @@ var react_default = /*#__PURE__*/__webpack_require__.n(react);
 var useDocusaurusContext = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/AnnouncementBar/styles.module.css
-var styles_module = __webpack_require__(109);
+var styles_module = __webpack_require__(108);
 var styles_module_default = /*#__PURE__*/__webpack_require__.n(styles_module);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/AnnouncementBar/index.js
@@ -1528,23 +1528,23 @@ var useBaseUrl = __webpack_require__(7);
  * LICENSE file in the root directory of this source tree.
  */const useHideableNavbar=hideOnScroll=>{const[isNavbarVisible,setIsNavbarVisible]=Object(react["useState"])(true);const[isFocusedAnchor,setIsFocusedAnchor]=Object(react["useState"])(false);const[lastScrollTop,setLastScrollTop]=Object(react["useState"])(0);const[navbarHeight,setNavbarHeight]=Object(react["useState"])(0);const navbarRef=Object(react["useCallback"])(node=>{if(node!==null){setNavbarHeight(node.getBoundingClientRect().height);}},[]);const location=Object(router["d" /* useLocation */])();const[hash,setHash]=hooks_useLocationHash(location.hash);const handleScroll=()=>{const scrollTop=window.pageYOffset||document.documentElement.scrollTop;if(scrollTop===0){setIsNavbarVisible(true);}if(scrollTop<navbarHeight){return;}if(isFocusedAnchor){setIsFocusedAnchor(false);setIsNavbarVisible(false);setLastScrollTop(scrollTop);return;}const documentHeight=document.documentElement.scrollHeight-navbarHeight;const windowHeight=window.innerHeight;if(lastScrollTop&&scrollTop>=lastScrollTop){setIsNavbarVisible(false);}else if(scrollTop+windowHeight<documentHeight){setIsNavbarVisible(true);}setLastScrollTop(scrollTop);};Object(react["useEffect"])(()=>{if(!hideOnScroll){return undefined;}window.addEventListener('scroll',handleScroll);return()=>{window.removeEventListener('scroll',handleScroll);};},[lastScrollTop,navbarHeight]);Object(react["useEffect"])(()=>{if(!hideOnScroll){return;}setIsNavbarVisible(true);setHash(location.hash);},[location]);Object(react["useEffect"])(()=>{if(!hideOnScroll){return;}if(!hash){return;}setIsFocusedAnchor(true);},[hash]);return{navbarRef,isNavbarVisible};};/* harmony default export */ var hooks_useHideableNavbar = (useHideableNavbar);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLockBodyScroll.js
-var useLockBodyScroll = __webpack_require__(98);
+var useLockBodyScroll = __webpack_require__(97);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLogo.js
-var useLogo = __webpack_require__(99);
+var useLogo = __webpack_require__(98);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useThemeContext.js
 var useThemeContext = __webpack_require__(58);
 
 // EXTERNAL MODULE: ./src/exports/newRelease.js
-var exports_newRelease = __webpack_require__(101);
+var exports_newRelease = __webpack_require__(100);
 
 // EXTERNAL MODULE: ./src/theme/Navbar/styles.module.css
-var Navbar_styles_module = __webpack_require__(73);
+var Navbar_styles_module = __webpack_require__(109);
 var Navbar_styles_module_default = /*#__PURE__*/__webpack_require__.n(Navbar_styles_module);
 
 // CONCATENATED MODULE: ./src/theme/Navbar/index.js
-function navLinkAttributes(label,right){let attrs={'label':label};switch(label.toLowerCase()){case'chat':attrs.hideText=right==true;attrs.icon='message-circle';return attrs;case'community':attrs.hideText=right==true;attrs.icon='users';return attrs;case'download':const newRelease=Object(exports_newRelease["a" /* fetchNewRelease */])();attrs.hideText=right==true;attrs.icon='download';if(newRelease){attrs.badge='new';attrs.badgeStyle='primary';}return attrs;case'github':attrs.badge='6';attrs.hideText=false;attrs.icon='github';return attrs;default:return attrs;};}function NavLink({href,hideIcon,label,onClick,position,right,to}){let attributes=navLinkAttributes(label,right)||{};const toUrl=Object(useBaseUrl["a" /* default */])(to);return/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:classnames_default()("navbar__item navbar__link",attributes.className,{'navbar__item__icon_only':attributes.hideText}),title:attributes.hideText?label:null,onClick:onClick},href?{target:'_blank',rel:'noopener noreferrer',href:href}:{activeClassName:'navbar__link--active',to:toUrl}),!hideIcon&&attributes.icon&&/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,/*#__PURE__*/react_default.a.createElement("i",{className:`feather icon-${attributes.icon}`})," ",attributes.iconLabel),!attributes.hideText&&attributes.label,attributes.badge&&/*#__PURE__*/react_default.a.createElement("span",{className:classnames_default()('badge',`badge--${attributes.badgeStyle||'secondary'}`)},attributes.badge));}function Navbar(){const{siteConfig:{themeConfig:{navbar:{title,links=[],hideOnScroll=false}={},disableDarkMode=false}},isClient}=Object(useDocusaurusContext["a" /* default */])();const[sidebarShown,setSidebarShown]=Object(react["useState"])(false);const[isSearchBarExpanded,setIsSearchBarExpanded]=Object(react["useState"])(false);const{isDarkTheme,setLightTheme,setDarkTheme}=Object(useThemeContext["a" /* default */])();const{navbarRef,isNavbarVisible}=hooks_useHideableNavbar(hideOnScroll);const{logoLink,logoLinkProps,logoImageUrl,logoAlt}=Object(useLogo["a" /* default */])();Object(useLockBodyScroll["a" /* default */])(sidebarShown);const showSidebar=Object(react["useCallback"])(()=>{setSidebarShown(true);},[setSidebarShown]);const hideSidebar=Object(react["useCallback"])(()=>{setSidebarShown(false);},[setSidebarShown]);const onToggleChange=Object(react["useCallback"])(e=>e.target.checked?setDarkTheme():setLightTheme(),[setLightTheme,setDarkTheme]);return/*#__PURE__*/react_default.a.createElement("nav",{ref:navbarRef,className:classnames_default()('navbar','navbar--light','navbar--fixed-top',{'navbar-sidebar--show':sidebarShown,[Navbar_styles_module_default.a.navbarHideable]:hideOnScroll,[Navbar_styles_module_default.a.navbarHidden]:!isNavbarVisible})},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__inner"},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__items"},/*#__PURE__*/react_default.a.createElement("div",{"aria-label":"Navigation bar toggle",className:"navbar__toggle",role:"button",tabIndex:0,onClick:showSidebar,onKeyDown:showSidebar},/*#__PURE__*/react_default.a.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:"30",height:"30",viewBox:"0 0 30 30",role:"img",focusable:"false"},/*#__PURE__*/react_default.a.createElement("title",null,"Menu"),/*#__PURE__*/react_default.a.createElement("path",{stroke:"currentColor",strokeLinecap:"round",strokeMiterlimit:"10",strokeWidth:"2",d:"M4 7h22M4 15h22M4 23h22"}))),/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:"navbar__brand",to:logoLink},logoLinkProps),logoImageUrl!=null&&/*#__PURE__*/react_default.a.createElement(lib_default.a,{className:"navbar__logo",src:logoImageUrl,alt:logoAlt}),title!=null&&/*#__PURE__*/react_default.a.createElement("strong",{className:isSearchBarExpanded?Navbar_styles_module_default.a.hideLogoText:''},title)),links.filter(linkItem=>linkItem.position!=='right').map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({},linkItem,{left:true,key:i})))),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__items navbar__items--right"},links.filter(linkItem=>linkItem.position==='right').map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({},linkItem,{right:true,key:i}))),!disableDarkMode&&/*#__PURE__*/react_default.a.createElement(Toggle,{className:Navbar_styles_module_default.a.displayOnlyInLargeViewport,"aria-label":"Dark mode toggle",checked:isDarkTheme,onChange:onToggleChange}),/*#__PURE__*/react_default.a.createElement(SearchBar,{handleSearchBarToggle:setIsSearchBarExpanded,isSearchBarExpanded:isSearchBarExpanded}))),/*#__PURE__*/react_default.a.createElement("div",{role:"presentation",className:"navbar-sidebar__backdrop",onClick:hideSidebar}),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar"},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar__brand"},/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:"navbar__brand",onClick:hideSidebar,to:logoLink},logoLinkProps),logoImageUrl!=null&&/*#__PURE__*/react_default.a.createElement(lib_default.a,{className:"navbar__logo",src:logoImageUrl,alt:logoAlt}),title!=null&&/*#__PURE__*/react_default.a.createElement("strong",null,title)),!disableDarkMode&&sidebarShown&&/*#__PURE__*/react_default.a.createElement(Toggle,{"aria-label":"Dark mode toggle in sidebar",checked:isDarkTheme,onChange:onToggleChange})),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar__items"},/*#__PURE__*/react_default.a.createElement("div",{className:"menu"},/*#__PURE__*/react_default.a.createElement("ul",{className:"menu__list"},links.map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement("li",{className:"menu__list-item",key:i},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"menu__link"},linkItem,{hideIcon:true,onClick:hideSidebar})))))))));}/* harmony default export */ var theme_Navbar = (Navbar);
+function navLinkAttributes(label,right){let attrs={'label':label};switch(label.toLowerCase()){case'chat':attrs.hideText=right==true;attrs.icon='message-circle';return attrs;case'community':attrs.hideText=right==true;attrs.icon='users';return attrs;case'download':const newRelease=Object(exports_newRelease["a" /* fetchNewRelease */])();attrs.hideText=right==true;attrs.icon='download';if(newRelease){attrs.badge='new';attrs.badgeStyle='primary';}return attrs;case'github':attrs.badge='6';attrs.hideText=false;attrs.icon='github';return attrs;default:return attrs;};}function NavLink({href,hideIcon,label,onClick,position,right,to}){let attributes=navLinkAttributes(label,right)||{};const toUrl=Object(useBaseUrl["a" /* default */])(to);return/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:classnames_default()("navbar__item navbar__link",attributes.className,{'navbar__item__icon_only':attributes.hideText}),title:attributes.hideText?label:null,onClick:onClick},href?{target:'_blank',rel:'noopener noreferrer',href:href}:{activeClassName:'navbar__link--active',to:toUrl}),!hideIcon&&attributes.icon&&/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,/*#__PURE__*/react_default.a.createElement("i",{className:`feather icon-${attributes.icon}`})," ",attributes.iconLabel),!attributes.hideText&&attributes.label,attributes.badge&&/*#__PURE__*/react_default.a.createElement("span",{className:classnames_default()('badge',`badge--${attributes.badgeStyle||'secondary'}`)},attributes.badge));}function Navbar(){const{siteConfig:{themeConfig:{navbar:{title,links=[],hideOnScroll=false}={},disableDarkMode=false}},isClient}=Object(useDocusaurusContext["a" /* default */])();const[sidebarShown,setSidebarShown]=Object(react["useState"])(false);const[isSearchBarExpanded,setIsSearchBarExpanded]=Object(react["useState"])(false);const{isDarkTheme,setLightTheme,setDarkTheme}=Object(useThemeContext["a" /* default */])();const{navbarRef,isNavbarVisible}=hooks_useHideableNavbar(hideOnScroll);const{logoLink,logoLinkProps,logoImageUrl,logoAlt}=Object(useLogo["a" /* default */])();Object(useLockBodyScroll["a" /* default */])(sidebarShown);const showSidebar=Object(react["useCallback"])(()=>{setSidebarShown(true);},[setSidebarShown]);const hideSidebar=Object(react["useCallback"])(()=>{setSidebarShown(false);},[setSidebarShown]);const onToggleChange=Object(react["useCallback"])(e=>e.target.checked?setDarkTheme():setLightTheme(),[setLightTheme,setDarkTheme]);return/*#__PURE__*/react_default.a.createElement("nav",{ref:navbarRef,className:classnames_default()('navbar','navbar--light','navbar--fixed-top',{'navbar-sidebar--show':sidebarShown,[Navbar_styles_module_default.a.navbarHideable]:hideOnScroll,[Navbar_styles_module_default.a.navbarHidden]:!isNavbarVisible})},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__inner"},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__items"},/*#__PURE__*/react_default.a.createElement("div",{"aria-label":"Navigation bar toggle",className:"navbar__toggle",role:"button",tabIndex:0,onClick:showSidebar,onKeyDown:showSidebar},/*#__PURE__*/react_default.a.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:"30",height:"30",viewBox:"0 0 30 30",role:"img",focusable:"false"},/*#__PURE__*/react_default.a.createElement("title",null,"Menu"),/*#__PURE__*/react_default.a.createElement("path",{stroke:"currentColor",strokeLinecap:"round",strokeMiterlimit:"10",strokeWidth:"2",d:"M4 7h22M4 15h22M4 23h22"}))),/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:"navbar__brand",to:logoLink},logoLinkProps),logoImageUrl!=null&&/*#__PURE__*/react_default.a.createElement(lib_default.a,{className:"navbar__logo",src:logoImageUrl,alt:logoAlt}),title!=null&&/*#__PURE__*/react_default.a.createElement("strong",{className:isSearchBarExpanded?Navbar_styles_module_default.a.hideLogoText:''},title)),links.filter(linkItem=>linkItem.position!=='right').map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({},linkItem,{left:true,key:i})))),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar__items navbar__items--right"},links.filter(linkItem=>linkItem.position==='right').map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({},linkItem,{right:true,key:i}))),/*#__PURE__*/react_default.a.createElement(SearchBar,{handleSearchBarToggle:setIsSearchBarExpanded,isSearchBarExpanded:isSearchBarExpanded}))),/*#__PURE__*/react_default.a.createElement("div",{role:"presentation",className:"navbar-sidebar__backdrop",onClick:hideSidebar}),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar"},/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar__brand"},/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:"navbar__brand",onClick:hideSidebar,to:logoLink},logoLinkProps),logoImageUrl!=null&&/*#__PURE__*/react_default.a.createElement(lib_default.a,{className:"navbar__logo",src:logoImageUrl,alt:logoAlt}),title!=null&&/*#__PURE__*/react_default.a.createElement("strong",null,title))),/*#__PURE__*/react_default.a.createElement("div",{className:"navbar-sidebar__items"},/*#__PURE__*/react_default.a.createElement("div",{className:"menu"},/*#__PURE__*/react_default.a.createElement("ul",{className:"menu__list"},links.map((linkItem,i)=>/*#__PURE__*/react_default.a.createElement("li",{className:"menu__list-item",key:i},/*#__PURE__*/react_default.a.createElement(NavLink,Object(esm_extends["a" /* default */])({className:"menu__link"},linkItem,{hideIcon:true,onClick:hideSidebar})))))))));}/* harmony default export */ var theme_Navbar = (Navbar);
 // EXTERNAL MODULE: ./src/components/MailingListForm/styles.css
 var MailingListForm_styles = __webpack_require__(449);
 
@@ -1564,7 +1564,7 @@ function FooterLink({to,href,label,...props}){const toUrl=Object(useBaseUrl["a" 
  * LICENSE file in the root directory of this source tree.
  */const TAB_CHOICE_PREFIX='docusaurus.tab.';const useTabGroupChoice=()=>{const[tabGroupChoices,setChoices]=Object(react["useState"])({});const setChoiceSyncWithLocalStorage=Object(react["useCallback"])((groupId,newChoice)=>{try{localStorage.setItem(`${TAB_CHOICE_PREFIX}${groupId}`,newChoice);}catch(err){console.error(err);}},[]);Object(react["useEffect"])(()=>{try{const localStorageChoices={};for(let i=0;i<localStorage.length;i+=1){const storageKey=localStorage.key(i);if(storageKey.startsWith(TAB_CHOICE_PREFIX)){const groupId=storageKey.substring(TAB_CHOICE_PREFIX.length);localStorageChoices[groupId]=localStorage.getItem(storageKey);}}setChoices(localStorageChoices);}catch(err){console.error(err);}},[]);return{tabGroupChoices,setTabGroupChoices:(groupId,newChoice)=>{setChoices(oldChoices=>({...oldChoices,[groupId]:newChoice}));setChoiceSyncWithLocalStorage(groupId,newChoice);}};};/* harmony default export */ var hooks_useTabGroupChoice = (useTabGroupChoice);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/TabGroupChoiceContext.js
-var TabGroupChoiceContext = __webpack_require__(102);
+var TabGroupChoiceContext = __webpack_require__(101);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/TabGroupChoiceProvider/index.js
 /**
@@ -1581,7 +1581,7 @@ var TabGroupChoiceContext = __webpack_require__(102);
  * LICENSE file in the root directory of this source tree.
  */const themes={light:'',dark:'dark'};const useTheme=()=>{const{siteConfig:{themeConfig:{disableDarkMode}}={}}=Object(useDocusaurusContext["a" /* default */])();const[theme,setTheme]=Object(react["useState"])(typeof document!=='undefined'?document.documentElement.getAttribute('data-theme'):themes.light);const setThemeSyncWithLocalStorage=Object(react["useCallback"])(newTheme=>{try{localStorage.setItem('theme',newTheme);}catch(err){console.error(err);}},[setTheme]);const setLightTheme=Object(react["useCallback"])(()=>{setTheme(themes.light);setThemeSyncWithLocalStorage(themes.light);},[]);const setDarkTheme=Object(react["useCallback"])(()=>{setTheme(themes.dark);setThemeSyncWithLocalStorage(themes.dark);},[]);Object(react["useEffect"])(()=>{document.documentElement.setAttribute('data-theme',theme);},[theme]);Object(react["useEffect"])(()=>{if(disableDarkMode){return;}try{const localStorageTheme=localStorage.getItem('theme');if(localStorageTheme!==null){setTheme(localStorageTheme);}}catch(err){console.error(err);}},[setTheme]);Object(react["useEffect"])(()=>{if(disableDarkMode){return;}window.matchMedia('(prefers-color-scheme: dark)').addListener(({matches})=>{setTheme(matches?themes.dark:themes.light);});},[]);return{isDarkTheme:theme===themes.dark,setLightTheme,setDarkTheme};};/* harmony default export */ var hooks_useTheme = (useTheme);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/ThemeContext.js
-var ThemeContext = __webpack_require__(100);
+var ThemeContext = __webpack_require__(99);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/ThemeProvider/index.js
 /**
@@ -25869,7 +25869,7 @@ if (false) { var ariaCurrentType; }
   else {}
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(82)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(81)(module)))
 
 /***/ }),
 /* 44 */
@@ -26858,7 +26858,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _theme_ThemeContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(100);
+/* harmony import */ var _theme_ThemeContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(99);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -27571,7 +27571,7 @@ module.exports = {
 /* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(86),
+var Symbol = __webpack_require__(85),
     getRawTag = __webpack_require__(482),
     objectToString = __webpack_require__(483);
 
@@ -27643,7 +27643,7 @@ module.exports = isObjectLike;
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(91);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -27699,7 +27699,7 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/react-select/dist/react-select.esm.js + 16 modules
-var react_select_esm = __webpack_require__(107);
+var react_select_esm = __webpack_require__(106);
 
 // EXTERNAL MODULE: ./node_modules/classnames/index.js
 var classnames = __webpack_require__(3);
@@ -27710,7 +27710,7 @@ var query_string = __webpack_require__(260);
 var query_string_default = /*#__PURE__*/__webpack_require__.n(query_string);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/TabGroupChoiceContext.js
-var TabGroupChoiceContext = __webpack_require__(102);
+var TabGroupChoiceContext = __webpack_require__(101);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useTabGroupChoiceContext.js
 /**
@@ -28528,19 +28528,6 @@ module.exports = {
 
 /***/ }),
 /* 73 */
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {
-	"displayOnlyInLargeViewport": "displayOnlyInLargeViewport_16CL",
-	"hideLogoText": "hideLogoText_2KyX",
-	"navbarHideable": "navbarHideable_2ZIa",
-	"navbarHidden": "navbarHidden_3K1q"
-};
-
-
-/***/ }),
-/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var systemLineBreak = __webpack_require__(150).EOL;
@@ -28762,7 +28749,7 @@ module.exports = {
 
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports) {
 
 function formatPosition(metadata) {
@@ -28779,7 +28766,7 @@ module.exports = formatPosition;
 
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Marker = __webpack_require__(14);
@@ -29044,7 +29031,7 @@ module.exports = isMergeable;
 
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var mergeIntoShorthands = __webpack_require__(289);
@@ -29090,7 +29077,7 @@ module.exports = optimizeProperties;
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var wrapSingle = __webpack_require__(50).single;
@@ -29129,7 +29116,7 @@ module.exports = {
 
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // TODO: it'd be great to merge it with the other canReorder functionality
@@ -29228,13 +29215,13 @@ module.exports = {
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports) {
 
 var NO_PROTOCOL_RESOURCE_PATTERN = /^\/\//;
@@ -29247,7 +29234,7 @@ module.exports = hasProtocol;
 
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -29275,7 +29262,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29454,7 +29441,7 @@ module.exports = {
 
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29470,7 +29457,7 @@ module.exports = {
 
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -29486,7 +29473,7 @@ if (typeof process !== 'undefined' && process.type === 'renderer') {
 
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(31);
@@ -29498,7 +29485,7 @@ module.exports = Symbol;
 
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var listCacheClear = __webpack_require__(509),
@@ -29536,7 +29523,7 @@ module.exports = ListCache;
 
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var eq = __webpack_require__(217);
@@ -29563,7 +29550,7 @@ module.exports = assocIndexOf;
 
 
 /***/ }),
-/* 89 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(41);
@@ -29575,7 +29562,7 @@ module.exports = nativeCreate;
 
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isKeyable = __webpack_require__(527);
@@ -29599,7 +29586,7 @@ module.exports = getMapData;
 
 
 /***/ }),
-/* 91 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isSymbol = __webpack_require__(140);
@@ -29626,7 +29613,7 @@ module.exports = toKey;
 
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30542,7 +30529,7 @@ HelmetExport.renderStatic = HelmetExport.rewind;
 
 
 /***/ }),
-/* 93 */
+/* 92 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30555,7 +30542,7 @@ HelmetExport.renderStatic = HelmetExport.rewind;
  */function isInternalUrl(url){return /^(https?:|\/\/)/.test(url)===false;}
 
 /***/ }),
-/* 94 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30569,7 +30556,7 @@ HelmetExport.renderStatic = HelmetExport.rewind;
 function PagePaginator({className,previous,next}){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav",{className:classnames__WEBPACK_IMPORTED_MODULE_2___default()('pagination-nav',className)},previous&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"pagination-nav__item"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"],{className:"pagination-nav__link",to:previous.permalink},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5",{className:"pagination-nav__link--sublabel"},"Previous"),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4",{className:"pagination-nav__link--label"},"\xAB ",previous.title))),next&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"pagination-nav__item pagination-nav__item--next"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"],{className:"pagination-nav__link",to:next.permalink},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5",{className:"pagination-nav__link--sublabel"},"Next"),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4",{className:"pagination-nav__link--label"},next.title," \xBB"))));}/* harmony default export */ __webpack_exports__["a"] = (PagePaginator);
 
 /***/ }),
-/* 95 */
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30583,11 +30570,11 @@ function PagePaginator({className,previous,next}){return/*#__PURE__*/react__WEBP
  *//* harmony default export */ __webpack_exports__["a"] = (react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({}));
 
 /***/ }),
-/* 96 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var react_router_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(97);
+/* harmony import */ var react_router_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -30596,7 +30583,7 @@ function PagePaginator({className,previous,next}){return/*#__PURE__*/react__WEBP
  *//* harmony default export */ __webpack_exports__["a"] = (react_router_config__WEBPACK_IMPORTED_MODULE_0__[/* renderRoutes */ "b"]);
 
 /***/ }),
-/* 97 */
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30668,7 +30655,7 @@ function renderRoutes(routes, extraProps, switchProps) {
 
 
 /***/ }),
-/* 98 */
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30682,14 +30669,14 @@ function renderRoutes(routes, extraProps, switchProps) {
  */function useLockBodyScroll(lock=true){Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(()=>{document.body.style.overflow=lock?'hidden':'visible';return()=>{document.body.style.overflow='visible';};},[lock]);}/* harmony default export */ __webpack_exports__["a"] = (useLockBodyScroll);
 
 /***/ }),
-/* 99 */
+/* 98 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _theme_hooks_useThemeContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(58);
 /* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
-/* harmony import */ var _docusaurus_isInternalUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93);
+/* harmony import */ var _docusaurus_isInternalUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(92);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -30698,7 +30685,7 @@ function renderRoutes(routes, extraProps, switchProps) {
  */const useLogo=()=>{const{siteConfig:{baseUrl,themeConfig:{navbar:{logo={}}={}}}={}}=Object(_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])();const{isDarkTheme}=Object(_theme_hooks_useThemeContext__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])();const logoLink=logo.href||baseUrl;let logoLinkProps={};if(logo.target){logoLinkProps={target:logo.target};}else if(!Object(_docusaurus_isInternalUrl__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(logoLink)){logoLinkProps={rel:'noopener noreferrer',target:'_blank'};}const logoSrc=logo.srcDark&&isDarkTheme?logo.srcDark:logo.src;const logoImageUrl=Object(_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(logoSrc);return{logoLink,logoLinkProps,logoImageUrl,logoAlt:logo.alt};};/* harmony default export */ __webpack_exports__["a"] = (useLogo);
 
 /***/ }),
-/* 100 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30712,7 +30699,7 @@ function renderRoutes(routes, extraProps, switchProps) {
  */const ThemeContext=react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({isDarkTheme:false,setLightTheme:()=>{},setDarkTheme:()=>{}});/* harmony default export */ __webpack_exports__["a"] = (ThemeContext);
 
 /***/ }),
-/* 101 */
+/* 100 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30722,7 +30709,7 @@ function renderRoutes(routes, extraProps, switchProps) {
 function fetchNewRelease(){const context=Object(_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])();const{siteConfig={}}=context;const{metadata:{latest_release:latestRelease}}=siteConfig.customFields;const releaseDate=Date.parse(latestRelease.date);const releaseNow=new Date();const releaseDiffTime=Math.abs(releaseNow-releaseDate);const releaseDiffDays=Math.ceil(releaseDiffTime/(1000*60*60*24));let releaseViewedAt=null;if(typeof window!=='undefined'){releaseViewedAt=new Date(parseInt(window.localStorage.getItem('releaseViewedAt')||'0'));}if(releaseDiffDays<30&&(!releaseViewedAt||releaseViewedAt<releaseDate)){return latestRelease;}return null;}function viewedNewRelease(){if(typeof window!=='undefined'){window.localStorage.setItem('releaseViewedAt',new Date().getTime());}}/* unused harmony default export */ var _unused_webpack_default_export = ({fetchNewRelease,viewedNewRelease});
 
 /***/ }),
-/* 102 */
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30736,7 +30723,7 @@ function fetchNewRelease(){const context=Object(_docusaurus_useDocusaurusContext
  */const TabGroupChoiceContext=Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({tabGroupChoices:{},setTabGroupChoices:()=>{}});/* harmony default export */ __webpack_exports__["a"] = (TabGroupChoiceContext);
 
 /***/ }),
-/* 103 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30757,18 +30744,18 @@ function fetchNewRelease(){const context=Object(_docusaurus_useDocusaurusContext
 return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a",props);}return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"],props);},pre:props=>/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div",Object(_home_travis_build_dalexhd_SteamSpeak_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({className:_styles_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.mdxCodeBlock},props)),h1:Object(_theme_Heading__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('h1'),h2:Object(_theme_Heading__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('h2'),h3:Object(_theme_Heading__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('h3'),h4:Object(_theme_Heading__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('h4'),h5:Object(_theme_Heading__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('h5'),h6:Object(_theme_Heading__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('h6')});
 
 /***/ }),
-/* 104 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _site_src_components_Alert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26);
-/* harmony import */ var _site_src_components_DownloadDiagram__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(105);
+/* harmony import */ var _site_src_components_DownloadDiagram__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(104);
 /* harmony import */ var _site_src_components_Jump__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33);
 /* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16);
 /* harmony import */ var _docusaurus_Link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(107);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(106);
 /* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(15);
 /* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _theme_TabItem__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(44);
@@ -30780,13 +30767,13 @@ return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a
 /* harmony import */ var _styles_module_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(60);
 /* harmony import */ var _styles_module_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_styles_module_css__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(5);
-/* harmony import */ var _site_src_exports_newRelease__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(101);
+/* harmony import */ var _site_src_exports_newRelease__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(100);
 /* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(7);
 /* harmony import */ var _site_src_exports_repoUrl__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(22);
 function Downloads({browsePath,downloads}){const groupedDownloads=lodash_groupBy__WEBPACK_IMPORTED_MODULE_11___default()(downloads,download=>{return[download.os,download.package_manager];});return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul",{className:_styles_module_css__WEBPACK_IMPORTED_MODULE_12___default.a.downloadFiles},Object.keys(groupedDownloads).sort().map((key,catIdx)=>/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li",{key:catIdx},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",null,groupedDownloads[key][0].os," ",/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code",null,".",groupedDownloads[key][0].file_type)),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul",null,groupedDownloads[key].map((download,downloadIdx)=>/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li",{key:downloadIdx},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a",{key:downloadIdx,href:Object(_site_src_exports_repoUrl__WEBPACK_IMPORTED_MODULE_16__[/* repoUrl */ "a"])(`/archive/${browsePath}.${download.file_type}`)},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i",{className:"feather icon-download"})," Download")))))),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a",{href:Object(_site_src_exports_repoUrl__WEBPACK_IMPORTED_MODULE_16__[/* repoUrl */ "a"])(`/releases`),target:"_blank"},"browse all files\u2026")));}function DownloadTable({browsePath,date,downloads,releaseNotesPath,version}){const context=Object(_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"])();const{siteConfig={}}=context;const{metadata:{installation:installation,latest_release:latestRelease}}=siteConfig.customFields;const{platforms,operating_systems:operatingSystems}=installation;return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:_styles_module_css__WEBPACK_IMPORTED_MODULE_12___default.a.downloadTable},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,"Version"),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,version," \u2022 ",date,releaseNotesPath&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,null," \u2022 ",/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"],{to:Object(_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_15__[/* default */ "a"])(releaseNotesPath)},"release notes")))),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,"License"),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a",{href:Object(_site_src_exports_repoUrl__WEBPACK_IMPORTED_MODULE_16__[/* repoUrl */ "a"])('/blob/master/LICENSE'),target:"_blank"},"MIT"))),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,"Downloads"),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Downloads,{downloads:downloads,browsePath:browsePath}))),platforms.length>0&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,"Platforms"),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,Object.values(platforms).map((platform,idx)=>/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",{key:idx},idx>0?" • ":"",/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"],{to:`/docs/setup/installation/platforms/${platform.name}/`}," ",platform.title))))),operatingSystems.length>0&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,"Operating Systems"),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,Object.values(operatingSystems).map((operatingSystem,idx)=>/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",{key:idx},idx>0?" • ":"",/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"],{to:`/docs/setup/installation/operating-systems/${operatingSystem.name}/`},operatingSystem.title))))),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,"Manual"),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"],{to:"/docs/setup/installation/manual/from-archives/"},"From archives"),"\xA0\u2022\xA0",/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"],{to:"/docs/setup/installation/manual/from-source/"},"From source"))));}function ReleaseDownload({version}){const context=Object(_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"])();const{siteConfig={}}=context;const{metadata:{installation:installation,latest_release:latestRelease,releases:releasesObj}}=siteConfig.customFields;const{downloads}=installation;const latestDownloads=Object.values(downloads).filter(download=>download.available_on_latest);const nightlyDownloads=Object.values(downloads).filter(download=>download.available_on_nightly);const nightlyDate=new Date().toISOString().substr(0,10);const releases=Object.values(releasesObj).slice(0);releases.reverse();const releaseOptions=releases.map(release=>({value:release.version,label:`v${release.version} - ${release.date}`}));Object(_site_src_exports_newRelease__WEBPACK_IMPORTED_MODULE_14__[/* viewedNewRelease */ "b"])();const[selectedVersion,setVersion]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(version||latestRelease.version);const release=releases.find(release=>release.version==selectedVersion);return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_theme_Layout__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"],{title:"Download",description:"Download SteamSpeak for your platform."},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header",{className:"hero hero--clean hero--flush"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"container"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_site_src_components_DownloadDiagram__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"],null),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1",null,"Download SteamSpeak"))),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:classnames__WEBPACK_IMPORTED_MODULE_10___default()('container',_styles_module_css__WEBPACK_IMPORTED_MODULE_12___default.a.downloadTableContainer)},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_theme_Tabs__WEBPACK_IMPORTED_MODULE_9__[/* default */ "a"],{block:true,className:"rounded",defaultValue:version=='nightly'?'nightly':'stable',values:[{label:`Stable`,value:'stable'},{label:'Nightly',value:'nightly'}]},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_theme_TabItem__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"],{value:"stable"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"],{className:classnames__WEBPACK_IMPORTED_MODULE_10___default()('react-select-container',_styles_module_css__WEBPACK_IMPORTED_MODULE_12___default.a.releaseSelect),classNamePrefix:"react-select",options:releaseOptions,isClearable:false,placeholder:"Select a version...",value:releaseOptions.find(option=>release&&option.value==release.version),onChange:selectedOption=>setVersion(selectedOption?selectedOption.value:null)}),release&&release.version!=releases[0].version&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_site_src_components_Alert__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"],{fill:true,type:"warning"},"This is an outdated version. Outdated versions maybe contain bugs. It is recommended to use the latest version. Please proceed with caution."),release&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DownloadTable,{browsePath:'v'+release.version,date:release.date,downloads:latestDownloads,releaseNotesPath:false,version:release.version})),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_theme_TabItem__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"],{value:"nightly"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_site_src_components_Alert__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"],{fill:true,type:"warning"},"Nightly versions contain bleeding edge changes that may contain bugs. Proceed with caution."),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DownloadTable,{browsePath:"master",date:nightlyDate,downloads:nightlyDownloads,version:"nightly"}))))),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:classnames__WEBPACK_IMPORTED_MODULE_10___default()('container',_styles_module_css__WEBPACK_IMPORTED_MODULE_12___default.a.downloadGetStartedContainer)},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2",null,"Ready to get started?"),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_site_src_components_Jump__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"],{to:"/guides/getting-started/"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i",{className:"feather icon-book-open"})," Follow the getting started guide")))));}/* harmony default export */ __webpack_exports__["a"] = (ReleaseDownload);
 
 /***/ }),
-/* 105 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30797,14 +30784,14 @@ function Downloads({browsePath,downloads}){const groupedDownloads=lodash_groupBy
 function DownloadDiagram(){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:_styles_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.downloadDiagram},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:_styles_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.downloadLine},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null)),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg",{width:"104px",height:"77px",viewBox:"0 0 104 77",version:"1.1",xmlns:"http://www.w3.org/2000/svg"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g",{id:"Download",stroke:"none",strokeWidth:"1",fill:"none",fillRule:"evenodd"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g",{id:"Custom-Preset",transform:"translate(-514.000000, -182.000000)"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g",{id:"Download",transform:"translate(-340.000000, -479.000000)"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g",{id:"Box",transform:"translate(855.000000, 662.000000)"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Stroke-1",strokeOpacity:"0.0961538462",stroke:"#000000",strokeLinecap:"round",strokeLinejoin:"round",points:"0 53.8054695 50.8700833 75 101.73913 53.8054695 50.8700833 32.6086957"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Stroke-7",strokeOpacity:"0.0961538462",stroke:"#000000",strokeLinecap:"round",strokeLinejoin:"round",points:"50.2173913 1.30434783 101.73913 22.3096677 101.48902 53.4782609 50.3236883 32.7001761"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Stroke-9",strokeOpacity:"0.0961538462",stroke:"#000000",strokeLinecap:"round",strokeLinejoin:"round",points:"0.652173913 22.0405003 0.652173913 53.4782609 51.5217391 32.6717368 51.415679 1.30434783"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Fill-11",fillOpacity:"0.061489292",fill:"#000000",points:"0.105238838 53.6435064 0 21.3702827 50.7622629 0 101.73913 21.5851512 101.571821 53.5681562 50.7622629 75"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Stroke-13",strokeOpacity:"0.0961538462",stroke:"#000000",strokeLinecap:"round",strokeLinejoin:"round",points:"0.105238838 53.6435107 0 21.3702935 50.7622629 0 101.73913 21.5851619 101.57178 53.5681605 50.7622629 75"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g",{id:"Vector",transform:"translate(17.608696, 16.304348)"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Fill-21",fill:"#10E7FF",points:"0 32.7525563 32.9745185 45.7396607 65.9482759 32.7525563 32.9745185 19.7640509"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Fill-22",fill:"#10E7FF",points:"0 12.9878049 0 32.705776 33.8343328 45.7396607 33.8343328 26.1899524"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Fill-23",fill:"#10E7FF",points:"33.8343328 26.0884369 66.5217391 12.9878049 66.3608828 32.6389942 33.8343328 45.7396607"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Fill-24",fill:"#10E7FF",points:"33.2608696 0 66.5217391 13.1859105 66.3602357 32.7518558 33.3294971 19.7085585"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Fill-25",fill:"#10E7FF",points:"0 13.0169892 0 32.7518558 33.2608696 19.690725 33.1920696 0"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Fill-26",fill:"#10E7FF",points:"0.0688155922 32.7151525 0 13.0329132 33.1907541 0 66.5217391 13.1640006 66.4123223 32.6691948 33.1907541 45.7396607"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Fill-21-Copy",fillOpacity:"0.30736451",fill:"#FFFFFF",points:"0 12.9885054 32.9745185 25.9756098 65.9482759 12.9885054 32.9745185 0"})),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Stroke-3",strokeOpacity:"0.0961538462",stroke:"#000000",strokeLinecap:"round",strokeLinejoin:"round",points:"0.652173913 22.826087 0.652173913 54.2369271 51.5217391 75 51.5217391 43.8572217"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon",{id:"Stroke-5",strokeOpacity:"0.0961538462",stroke:"#000000",strokeLinecap:"round",strokeLinejoin:"round",points:"50.2173913 43.6955049 101.73913 22.826087 101.48811 54.130582 50.2173913 75"})))))));}/* harmony default export */ __webpack_exports__["a"] = (DownloadDiagram);
 
 /***/ }),
-/* 106 */
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({"plugins":["/home/travis/build/dalexhd/SteamSpeak/docs/plugins/releases"],"themes":[["@docusaurus/theme-classic",{"customCss":"/home/travis/build/dalexhd/SteamSpeak/docs/src/css/custom.css"}],"@docusaurus/theme-search-algolia"],"customFields":{"metadata":{"plugins":{"serverName":{"beta":false,"config_examples":{"toml":"[sources.in]\n  type = \"docker\" # required"},"delivery_guarantee":"best_effort","description":"Elit nulla veniam est ea pariatur exercitation quis occaecat.","instance":"first-instance","features":["Collect Docker container logs.","Filter which containers you collect them from.","Automatically merge logs that Docker splits.","Enrich your logs with useful Docker context."],"id":"docker_source","logo_path":"/img/logos/docker.svg","name":"server-name","noun":"Server Name","operating_systems":["Linux","MacOS","Windows"],"output_types":["log"],"service_providers":[],"short_description":"Ingests data through the Docker engine daemon and outputs log events.","status":"prod-ready","through_description":"the Docker engine daemon","title":"Server Name","type":"plugin","unsupported_operating_systems":[]}},"team":[{"avatar":"https://github.com/dalexhd.png","bio":"\"Programming is not just for coding, it also changes your way of thinking when tackling problems or challenges in your life\"","github":"https://github.com/dalexhd","id":"dalexhd","blog":"www.linkedin.com/in/alex-borbolla","name":"Alex"}],"latest_release":{"version":"0.4.0"},"releases":{"0.0.3":{"compare_url":"https://github.com/dalexhd/steamspeak/compare/v0.0.0...v0.4.1","date":"2019-10-10","deletions_count":3038,"description":"","highlights":[],"commits":[],"insertions_count":6839,"last_version":"0.3.0","permalink":"/releases/0.0.3/","title":"SteamSpeak v0.0.3","type":"initial dev","type_url":"https://semver.org/#spec-item-4","version":"0.0.3","whats_next":[]},"0.4.0":{"codename":"Platform Mingling","compare_url":"https://github.com/dalexhd/steamspeak/compare/v0.0.3...v0.4.0","date":"2019-10-10","deletions_count":3038,"description":"","highlights":[],"commits":[],"insertions_count":6839,"last_version":"0.3.0","permalink":"/releases/0.4.0/","title":"SteamSpeak v0.4.0","type":"initial dev","type_url":"https://semver.org/#spec-item-4","version":"0.4.0","whats_next":[]}},"installation":{"downloads":{"zip":{"package_manager":"zup","available_on_latest":true,"available_on_nightly":true,"file_type":"zip","os":"All Platforms","type":"archive"},"tar.gz":{"package_manager":"tar.gz","available_on_latest":true,"available_on_nightly":true,"file_type":"tar.gz","os":"All Platforms","type":"archive"}},"operating_systems":{},"package_managers":{},"platforms":{}}},"chatUrl":"https://gitter.im/SteamSpeak","discordUrl":"https://discord.gg/st4nsXw"},"themeConfig":{"navbar":{"logo":{"alt":"SteamSpeak","src":"img/logo-light.svg"},"links":[{"to":"plugins/","label":"Plugins","position":"left"},{"to":"docs/about/what-is-steamspeak","activeBasePath":"docs","label":"Docs","position":"left"},{"to":"blog","label":"Blog","position":"left"},{"href":"https://github.com/dalexhd/SteamSpeak/issues","label":"Issues","position":"right"},{"to":"community/","label":"Community","position":"right"},{"to":"releases/","label":"Download","position":"right"},{"href":"https://github.com/dalexhd/steamspeak","label":"GitHub","position":"right"}]},"footer":{"links":[{"title":"Docs","items":[{"label":"What is SteamSpeak","to":"docs/about/what-is-steamspeak"},{"label":"Get Started","to":"docs/setup/installation"}]},{"title":"Community","items":[{"label":"Stack Overflow","href":"https://stackoverflow.com/questions/tagged/steamspeak"},{"label":"Discord","href":"https://discord.gg/st4nsXw"}]},{"title":"Social","items":[{"label":"Blog","to":"blog"},{"label":"GitHub","href":"https://github.com/dalexhd/steamspeak"}]}],"logo":{"alt":"SteamSpeak","src":"/img/logo-light.svg","href":"https://dalexhd.github.io/SteamSpeak/"},"copyright":"Copyright © 2020 SteamSpeak."},"algolia":{"apiKey":"d30054d0a4a3376e554f4e4bb53a0bd9","indexName":"steamspeak","algoliaOptions":{}},"googleAnalytics":{"trackingID":"UA-124336116-3"}},"title":"SteamSpeak","tagline":"Steam and TeamSpeak integration, done right!","url":"https://dalexhd.github.io","baseUrl":"/SteamSpeak/","favicon":"img/favicon-16x16.png","organizationName":"dalexhd","projectName":"steamspeak","presets":[["@docusaurus/preset-classic",{"docs":{"sidebarPath":"/home/travis/build/dalexhd/SteamSpeak/docs/sidebars.js","editUrl":"https://github.com/dalexhd/steamspeak/edit/master/docs/"},"sitemap":{"cacheTime":600000,"changefreq":"daily","priority":0.5}}]],"stylesheets":["https://fonts.googleapis.com/css?family=Ubuntu|Roboto|Source+Code+Pro","https://at-ui.github.io/feather-font/css/iconfont.css"],"scripts":[{"src":"https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js","async":true},{"src":"https://use.fontawesome.com/releases/v5.13.0/js/all.js","integrity":"sha384-ujbKXb9V3HdK7jcWL6kHL1c+2Lj4MR4Gkjl7UtwpSHg/ClpViddK9TI7yU53frPN","crossorigin":"anonymous"}]});
 
 /***/ }),
-/* 107 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37159,7 +37146,7 @@ var react_select_esm_index = stateManager_149692c5_esm_manageState(Select_073d29
 
 
 /***/ }),
-/* 108 */
+/* 107 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37235,7 +37222,7 @@ const instanceTypes=onlyinstanceTypes.size>0?onlyinstanceTypes:new Set(lodash_de
 return/*#__PURE__*/react_default.a.createElement("div",{className:classnames_default()('steamspeak-components',{'steamspeak-components--cols':filterColumn})},/*#__PURE__*/react_default.a.createElement("div",{className:"filters"},/*#__PURE__*/react_default.a.createElement("div",{className:"search"},/*#__PURE__*/react_default.a.createElement("input",{className:"input--text input--lg",type:"text",onChange:event=>setSearchTerm(event.currentTarget.value),placeholder:"\uD83D\uDD0D Search..."})),/*#__PURE__*/react_default.a.createElement("div",{className:"filter"},/*#__PURE__*/react_default.a.createElement("div",{className:"filter--label"},/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],{to:Object(useBaseUrl["a" /* default */])('/docs/about/instances/'),title:"Learn more about SteamSpeak's instance types"},"Instance names ",/*#__PURE__*/react_default.a.createElement("i",{className:"feather icon-info"}))),/*#__PURE__*/react_default.a.createElement("div",{className:"filter--choices"},/*#__PURE__*/react_default.a.createElement(components_CheckboxList,{label:"Event Types",icon:"cpu",values:instanceTypes,humanize:true,currentState:onlyinstanceTypes,setState:setOnlyinstanceTypes})))),/*#__PURE__*/react_default.a.createElement("div",{className:"steamspeak-components--results"},/*#__PURE__*/react_default.a.createElement(Components,{components:components,headingLevel:props.headingLevel,pathTemplate:pathTemplate,titles:titles})));}/* harmony default export */ var components_SteamSpeakComponents = __webpack_exports__["a"] = (SteamSpeakComponents);
 
 /***/ }),
-/* 109 */
+/* 108 */
 /***/ (function(module, exports) {
 
 // Exports
@@ -37243,6 +37230,19 @@ module.exports = {
 	"announcementBar": "announcementBar_HGgX",
 	"announcementBarClose": "announcementBarClose_2f8D",
 	"announcementBarContent": "announcementBarContent_GM1p"
+};
+
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+	"displayOnlyInLargeViewport": "displayOnlyInLargeViewport_16CL",
+	"hideLogoText": "hideLogoText_2KyX",
+	"navbarHideable": "navbarHideable_2ZIa",
+	"navbarHidden": "navbarHidden_3K1q"
 };
 
 
@@ -37774,9 +37774,9 @@ module.exports = sortSelectors;
 /* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Spaces = __webpack_require__(74).Spaces;
+var Spaces = __webpack_require__(73).Spaces;
 var Marker = __webpack_require__(14);
-var formatPosition = __webpack_require__(75);
+var formatPosition = __webpack_require__(74);
 
 var CASE_ATTRIBUTE_PATTERN = /[\s"'][iI]\s*\]/;
 var CASE_RESTORE_PATTERN = /([\d\w])([iI])\]/g;
@@ -38065,8 +38065,8 @@ module.exports = split;
 
 var emptyCharacter = '';
 
-var Breaks = __webpack_require__(74).Breaks;
-var Spaces = __webpack_require__(74).Spaces;
+var Breaks = __webpack_require__(73).Breaks;
+var Spaces = __webpack_require__(73).Spaces;
 
 var Marker = __webpack_require__(14);
 var Token = __webpack_require__(10);
@@ -38480,7 +38480,7 @@ var path = __webpack_require__(9);
 var url = __webpack_require__(28);
 
 var isRemoteResource = __webpack_require__(63);
-var hasProtocol = __webpack_require__(81);
+var hasProtocol = __webpack_require__(80);
 
 var HTTP_PROTOCOL = 'http:';
 
@@ -45857,7 +45857,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
-/* harmony import */ var _site_src_components_SteamSpeakComponents__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(108);
+/* harmony import */ var _site_src_components_SteamSpeakComponents__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(107);
 const frontMatter={last_modified_on:'2020-03-31',title:'Plugins',description:'Laboris nulla deserunt aute occaecat commodo pariatur Lorem incididunt.',sidebar_label:'hidden',hide_pagination:true};const metadata={"id":"reference/plugins","title":"Plugins","description":"Laboris nulla deserunt aute occaecat commodo pariatur Lorem incididunt.","source":"@site/docs/reference/plugins.md","permalink":"/SteamSpeak/docs/reference/plugins","editUrl":"https://github.com/dalexhd/steamspeak/edit/master/docs/docs/reference/plugins.md","sidebar_label":"hidden","sidebar":"docs","previous":{"title":"Reference","permalink":"/SteamSpeak/docs/reference"},"next":{"title":"Server Name","permalink":"/SteamSpeak/docs/reference/plugins/server-name"}};/* @jsx mdx */const rightToc=[];const makeShortcode=name=>function MDXDefaultShortcode(props){console.warn("Component "+name+" was not imported, exported, or provided by MDXProvider as global scope");return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",props);};const layoutProps={rightToc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(_home_travis_build_dalexhd_SteamSpeak_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex laudantium officia iure veniam beatae voluptates ipsum, sequi doloribus possimus praesentium nisi inventore voluptate hic nesciunt cum ipsa molestiae eos. Saepe consectetur nam dignissimos quam temporibus?`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("hr",null),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(_site_src_components_SteamSpeakComponents__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"],{titles:false,sinks:false,transforms:false,mdxType:"SteamSpeakComponents"}));};MDXContent.isMDXComponent=true;
 
 /***/ }),
@@ -45910,7 +45910,7 @@ function Download(){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___defaul
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _site_src_components_ReleaseDownload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(104);
+/* harmony import */ var _site_src_components_ReleaseDownload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(103);
 function ReleaseDownloadPage(props){const{content:ReleaseContents}=props;const{fontMatter,metadata}=ReleaseContents;const{version}=metadata;return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_site_src_components_ReleaseDownload__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"],{version:version});}/* harmony default export */ __webpack_exports__["default"] = (ReleaseDownloadPage);
 
 /***/ }),
@@ -46083,7 +46083,7 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(82)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(81)(module)))
 
 /***/ }),
 /* 213 */
@@ -46192,7 +46192,7 @@ module.exports = isArrayLike;
 /* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ListCache = __webpack_require__(87),
+var ListCache = __webpack_require__(86),
     stackClear = __webpack_require__(514),
     stackDelete = __webpack_require__(515),
     stackGet = __webpack_require__(516),
@@ -46439,7 +46439,7 @@ module.exports = matchesStrictComparable;
 /***/ (function(module, exports, __webpack_require__) {
 
 var castPath = __webpack_require__(223),
-    toKey = __webpack_require__(91);
+    toKey = __webpack_require__(90);
 
 /**
  * The base implementation of `_.get` without support for default values.
@@ -46520,7 +46520,7 @@ cd SteamSpeak
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _site_src_components_ReleaseDownload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(104);
+/* harmony import */ var _site_src_components_ReleaseDownload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(103);
 function NightlyDownload(){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_site_src_components_ReleaseDownload__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"],{version:"nightly"});}/* harmony default export */ __webpack_exports__["default"] = (NightlyDownload);
 
 /***/ }),
@@ -46634,7 +46634,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prism_react_renderer_prism__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
 /* harmony import */ var _docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57);
 /* harmony import */ var _docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _generated_docusaurus_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(106);
+/* harmony import */ var _generated_docusaurus_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(105);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -46668,7 +46668,7 @@ var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 // CONCATENATED MODULE: ./src/components/CTA/index.js
 function CTA({github,inline,size,style}){let classes=classnames_default()('panel','panel--button',`panel--${size}`,`panel--${style}`,{'panel--button--inline':inline});return/*#__PURE__*/react_default.a.createElement("div",{className:"row row--squished"},/*#__PURE__*/react_default.a.createElement("div",{className:"col"},/*#__PURE__*/react_default.a.createElement("a",{href:"https://twitter.com/dalexhd",target:"_blank",className:classes},/*#__PURE__*/react_default.a.createElement("div",{className:"panel--icon"},/*#__PURE__*/react_default.a.createElement("i",{className:"feather icon-twitter",title:"Twitter"})),/*#__PURE__*/react_default.a.createElement("div",null,/*#__PURE__*/react_default.a.createElement("div",{className:"panel--title"},"Follow @vectordotdev"),/*#__PURE__*/react_default.a.createElement("div",{className:"panel--description"},"Get real-time updates!")))),github!=false&&/*#__PURE__*/react_default.a.createElement("div",{className:"col"},/*#__PURE__*/react_default.a.createElement("a",{href:repoUrl["a" /* repoUrl */],target:"_blank",className:classes},/*#__PURE__*/react_default.a.createElement("div",{className:"panel--icon"},/*#__PURE__*/react_default.a.createElement("i",{className:"feather icon-github"})),/*#__PURE__*/react_default.a.createElement("div",null,/*#__PURE__*/react_default.a.createElement("div",{className:"panel--title"},"Star dalexhd/SteamSpeak"),/*#__PURE__*/react_default.a.createElement("div",{className:"panel--description"},"Star the repo to support us.")))));}/* harmony default export */ var components_CTA = (CTA);
 // EXTERNAL MODULE: ./src/components/DownloadDiagram/index.js
-var DownloadDiagram = __webpack_require__(105);
+var DownloadDiagram = __webpack_require__(104);
 
 // EXTERNAL MODULE: ./src/theme/Layout/index.js + 13 modules
 var Layout = __webpack_require__(16);
@@ -46677,13 +46677,13 @@ var Layout = __webpack_require__(16);
 var Link = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/MDXComponents/index.js
-var MDXComponents = __webpack_require__(103);
+var MDXComponents = __webpack_require__(102);
 
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/dist/esm.js
 var esm = __webpack_require__(1);
 
 // EXTERNAL MODULE: ./src/theme/PagePaginator/index.js
-var PagePaginator = __webpack_require__(94);
+var PagePaginator = __webpack_require__(93);
 
 // CONCATENATED MODULE: ./node_modules/timeago.js/esm/lang/en_US.js
 var EN_US = ['second', 'minute', 'hour', 'day', 'week', 'month', 'year'];
@@ -47134,7 +47134,7 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./src/components/SteamSpeakComponents/index.js + 2 modules
-var SteamSpeakComponents = __webpack_require__(108);
+var SteamSpeakComponents = __webpack_require__(107);
 
 // EXTERNAL MODULE: ./src/theme/Layout/index.js + 13 modules
 var Layout = __webpack_require__(16);
@@ -47401,7 +47401,7 @@ var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 var useDocusaurusContext = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/renderRoutes.js
-var renderRoutes = __webpack_require__(96);
+var renderRoutes = __webpack_require__(95);
 
 // EXTERNAL MODULE: ./src/theme/Layout/index.js + 13 modules
 var Layout = __webpack_require__(16);
@@ -47427,10 +47427,10 @@ var lib_default = /*#__PURE__*/__webpack_require__.n(lib);
 var useBaseUrl = __webpack_require__(7);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLockBodyScroll.js
-var useLockBodyScroll = __webpack_require__(98);
+var useLockBodyScroll = __webpack_require__(97);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLogo.js
-var useLogo = __webpack_require__(99);
+var useLogo = __webpack_require__(98);
 
 // EXTERNAL MODULE: ./src/theme/DocSidebar/styles.module.css
 var styles_module = __webpack_require__(48);
@@ -47448,7 +47448,7 @@ if(item.collapsed!==prevCollapsedProp){setPreviousCollapsedProp(item.collapsed);
 function mutateSidebarCollapsingState(item,path){const{items,href,type}=item;switch(type){case'category':{const anyChildItemsActive=items.map(childItem=>mutateSidebarCollapsingState(childItem,path)).filter(val=>val).length>0;// eslint-disable-next-line no-param-reassign
 item.collapsed=!anyChildItemsActive;return anyChildItemsActive;}case'link':default:return href===path;}}function DocSidebar(props){const[showResponsiveSidebar,setShowResponsiveSidebar]=Object(react["useState"])(false);const{siteConfig:{themeConfig:{navbar:{title}={}}}={},isClient}=Object(useDocusaurusContext["a" /* default */])();const{logoLink,logoLinkProps,logoImageUrl,logoAlt}=Object(useLogo["a" /* default */])();const{docsSidebars,path,sidebar:currentSidebar,sidebarCollapsible}=props;Object(useLockBodyScroll["a" /* default */])(showResponsiveSidebar);if(!currentSidebar){return null;}const sidebarData=docsSidebars[currentSidebar];if(!sidebarData){throw new Error(`Cannot find the sidebar "${currentSidebar}" in the sidebar config!`);}if(sidebarCollapsible){sidebarData.forEach(sidebarItem=>mutateSidebarCollapsingState(sidebarItem,path));}return/*#__PURE__*/react_default.a.createElement("div",{className:classnames_default()('docs-sidebar',styles_module_default.a.sidebar)},/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:styles_module_default.a.sidebarLogo,to:logoLink},logoLinkProps),logoImageUrl!=null&&/*#__PURE__*/react_default.a.createElement(lib_default.a,{key:isClient,src:logoImageUrl,alt:logoAlt}),title!=null&&/*#__PURE__*/react_default.a.createElement("strong",null,title)),/*#__PURE__*/react_default.a.createElement("div",{className:classnames_default()('menu','menu--responsive',styles_module_default.a.menu,{'menu--show':showResponsiveSidebar})},/*#__PURE__*/react_default.a.createElement("button",{"aria-label":showResponsiveSidebar?'Close Menu':'Open Menu',className:"button button--secondary button--sm menu__button",type:"button",onClick:()=>{setShowResponsiveSidebar(!showResponsiveSidebar);}},showResponsiveSidebar?/*#__PURE__*/react_default.a.createElement("span",{className:classnames_default()(styles_module_default.a.sidebarMenuIcon,styles_module_default.a.sidebarMenuCloseIcon)},"\xD7"):/*#__PURE__*/react_default.a.createElement("svg",{className:styles_module_default.a.sidebarMenuIcon,xmlns:"http://www.w3.org/2000/svg",height:MOBILE_TOGGLE_SIZE,width:MOBILE_TOGGLE_SIZE,viewBox:"0 0 32 32",role:"img",focusable:"false"},/*#__PURE__*/react_default.a.createElement("title",null,"Menu"),/*#__PURE__*/react_default.a.createElement("path",{stroke:"currentColor",strokeLinecap:"round",strokeMiterlimit:"10",strokeWidth:"2",d:"M4 7h22M4 15h22M4 23h22"}))),/*#__PURE__*/react_default.a.createElement("ul",{className:"menu__list"},sidebarData.map(item=>item.items.length>0&&/*#__PURE__*/react_default.a.createElement(DocSidebarItem,{key:item.label,item:item,level:1,onItemClick:()=>{setShowResponsiveSidebar(false);},collapsible:sidebarCollapsible})))));}/* harmony default export */ var theme_DocSidebar = (DocSidebar);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/MDXComponents/index.js
-var MDXComponents = __webpack_require__(103);
+var MDXComponents = __webpack_require__(102);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/NotFound.js
 var NotFound = __webpack_require__(142);
@@ -47483,7 +47483,7 @@ var Head = __webpack_require__(67);
 var Link = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./src/theme/PagePaginator/index.js
-var PagePaginator = __webpack_require__(94);
+var PagePaginator = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/lodash/lodash.js
 var lodash = __webpack_require__(43);
@@ -49155,7 +49155,7 @@ module.exports = Object.assign(
   __webpack_require__(381),
   __webpack_require__(383),
   __webpack_require__(29),
-  __webpack_require__(84)
+  __webpack_require__(83)
 )
 
 // Export fs.promises as a getter property so that we don't trigger
@@ -51965,7 +51965,7 @@ var validator = __webpack_require__(311);
 
 var compatibilityFrom = __webpack_require__(312);
 var fetchFrom = __webpack_require__(313);
-var formatFrom = __webpack_require__(74).formatFrom;
+var formatFrom = __webpack_require__(73).formatFrom;
 var inlineFrom = __webpack_require__(317);
 var inlineRequestFrom = __webpack_require__(318);
 var inlineTimeoutFrom = __webpack_require__(319);
@@ -52159,7 +52159,7 @@ var OptimizationLevel = __webpack_require__(35).OptimizationLevel;
 var Token = __webpack_require__(10);
 var Marker = __webpack_require__(14);
 
-var formatPosition = __webpack_require__(75);
+var formatPosition = __webpack_require__(74);
 var split = __webpack_require__(116);
 
 var serializeRules = __webpack_require__(11).rules;
@@ -53208,7 +53208,7 @@ var removeDuplicates = __webpack_require__(307);
 var removeUnusedAtRules = __webpack_require__(308);
 var restructure = __webpack_require__(309);
 
-var optimizeProperties = __webpack_require__(77);
+var optimizeProperties = __webpack_require__(76);
 
 var OptimizationLevel = __webpack_require__(35).OptimizationLevel;
 
@@ -53337,9 +53337,9 @@ module.exports = level2Optimize;
 /* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isMergeable = __webpack_require__(76);
+var isMergeable = __webpack_require__(75);
 
-var optimizeProperties = __webpack_require__(77);
+var optimizeProperties = __webpack_require__(76);
 
 var sortSelectors = __webpack_require__(113);
 var tidyRules = __webpack_require__(114);
@@ -53398,7 +53398,7 @@ var hasInherit = __webpack_require__(154);
 var populateComponents = __webpack_require__(118);
 
 var compactable = __webpack_require__(39);
-var deepClone = __webpack_require__(78).deep;
+var deepClone = __webpack_require__(77).deep;
 var restoreWithComponents = __webpack_require__(119);
 
 var restoreFromOptimizing = __webpack_require__(61);
@@ -53851,7 +53851,7 @@ var wrapSingle = __webpack_require__(50).single;
 var Token = __webpack_require__(10);
 var Marker = __webpack_require__(14);
 
-var formatPosition = __webpack_require__(75);
+var formatPosition = __webpack_require__(74);
 
 function _anyIsInherit(values) {
   var i, l;
@@ -54804,7 +54804,7 @@ module.exports = understandable;
 /* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shallowClone = __webpack_require__(78).shallow;
+var shallowClone = __webpack_require__(77).shallow;
 
 var Token = __webpack_require__(10);
 var Marker = __webpack_require__(14);
@@ -55122,9 +55122,9 @@ var overridesNonComponentShorthand = __webpack_require__(298);
 var sameVendorPrefixesIn = __webpack_require__(156).same;
 
 var compactable = __webpack_require__(39);
-var deepClone = __webpack_require__(78).deep;
+var deepClone = __webpack_require__(77).deep;
 var restoreWithComponents = __webpack_require__(119);
-var shallowClone = __webpack_require__(78).shallow;
+var shallowClone = __webpack_require__(77).shallow;
 
 var restoreFromOptimizing = __webpack_require__(61);
 
@@ -55709,8 +55709,8 @@ module.exports = overridesNonComponentShorthand;
 /* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var canReorder = __webpack_require__(79).canReorder;
-var canReorderSingle = __webpack_require__(79).canReorderSingle;
+var canReorder = __webpack_require__(78).canReorder;
+var canReorderSingle = __webpack_require__(78).canReorderSingle;
 var extractProperties = __webpack_require__(120);
 var rulesOverlap = __webpack_require__(157);
 
@@ -55941,7 +55941,7 @@ module.exports = specificity;
 /* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isMergeable = __webpack_require__(76);
+var isMergeable = __webpack_require__(75);
 
 var sortSelectors = __webpack_require__(113);
 var tidyRules = __webpack_require__(114);
@@ -56027,10 +56027,10 @@ module.exports = mergeNonAdjacentByBody;
 /* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var canReorder = __webpack_require__(79).canReorder;
+var canReorder = __webpack_require__(78).canReorder;
 var extractProperties = __webpack_require__(120);
 
-var optimizeProperties = __webpack_require__(77);
+var optimizeProperties = __webpack_require__(76);
 
 var serializeRules = __webpack_require__(11).rules;
 
@@ -56111,9 +56111,9 @@ module.exports = mergeNonAdjacentBySelector;
 /* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isMergeable = __webpack_require__(76);
+var isMergeable = __webpack_require__(75);
 
-var optimizeProperties = __webpack_require__(77);
+var optimizeProperties = __webpack_require__(76);
 
 var cloneArray = __webpack_require__(158);
 
@@ -56673,9 +56673,9 @@ module.exports = removeUnusedAtRules;
 /* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var canReorderSingle = __webpack_require__(79).canReorderSingle;
+var canReorderSingle = __webpack_require__(78).canReorderSingle;
 var extractProperties = __webpack_require__(120);
-var isMergeable = __webpack_require__(76);
+var isMergeable = __webpack_require__(75);
 var tidyRuleDuplicates = __webpack_require__(310);
 
 var Token = __webpack_require__(10);
@@ -57832,7 +57832,7 @@ module.exports = fetchFrom;
 /* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var http = __webpack_require__(80);
+var http = __webpack_require__(79);
 var https = __webpack_require__(51);
 var url = __webpack_require__(28);
 
@@ -60069,7 +60069,7 @@ var restoreImport = __webpack_require__(165);
 var tokenize = __webpack_require__(337);
 var Token = __webpack_require__(10);
 var Marker = __webpack_require__(14);
-var hasProtocol = __webpack_require__(81);
+var hasProtocol = __webpack_require__(80);
 var isImport = __webpack_require__(166);
 var isRemoteResource = __webpack_require__(63);
 
@@ -60409,7 +60409,7 @@ var rebaseLocalMap = __webpack_require__(162);
 var rebaseRemoteMap = __webpack_require__(163);
 
 var Token = __webpack_require__(10);
-var hasProtocol = __webpack_require__(81);
+var hasProtocol = __webpack_require__(80);
 var isDataUriResource = __webpack_require__(332);
 var isRemoteResource = __webpack_require__(63);
 
@@ -60682,7 +60682,7 @@ var path = __webpack_require__(9);
 
 var isAllowedResource = __webpack_require__(122);
 
-var hasProtocol = __webpack_require__(81);
+var hasProtocol = __webpack_require__(80);
 var isRemoteResource = __webpack_require__(63);
 
 function loadOriginalSources(context, callback) {
@@ -61057,7 +61057,7 @@ module.exports = rewriteUrl;
 var Marker = __webpack_require__(14);
 var Token = __webpack_require__(10);
 
-var formatPosition = __webpack_require__(75);
+var formatPosition = __webpack_require__(74);
 
 var Level = {
   BLOCK: 'block',
@@ -62129,7 +62129,7 @@ module.exports = serializeStylesAndSourceMap;
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(82)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(81)(module)))
 
 /***/ }),
 /* 341 */
@@ -64417,7 +64417,7 @@ const fs = __webpack_require__(12)
 const path = __webpack_require__(9)
 const mkdirpSync = __webpack_require__(21).mkdirsSync
 const utimesSync = __webpack_require__(172).utimesMillisSync
-const stat = __webpack_require__(83)
+const stat = __webpack_require__(82)
 
 function copySync (src, dest, opts) {
   if (typeof opts === 'function') {
@@ -64739,7 +64739,7 @@ const path = __webpack_require__(9)
 const mkdirp = __webpack_require__(21).mkdirs
 const pathExists = __webpack_require__(29).pathExists
 const utimes = __webpack_require__(172).utimesMillis
-const stat = __webpack_require__(83)
+const stat = __webpack_require__(82)
 
 function copy (src, dest, opts, cb) {
   if (typeof opts === 'function' && !cb) {
@@ -64957,7 +64957,7 @@ const u = __webpack_require__(17).fromCallback
 const fs = __webpack_require__(12)
 const path = __webpack_require__(9)
 const mkdir = __webpack_require__(21)
-const remove = __webpack_require__(84)
+const remove = __webpack_require__(83)
 
 const emptyDir = u(function emptyDir (dir, callback) {
   callback = callback || function () {}
@@ -65934,9 +65934,9 @@ module.exports = {
 const fs = __webpack_require__(12)
 const path = __webpack_require__(9)
 const copySync = __webpack_require__(170).copySync
-const removeSync = __webpack_require__(84).removeSync
+const removeSync = __webpack_require__(83).removeSync
 const mkdirpSync = __webpack_require__(21).mkdirpSync
-const stat = __webpack_require__(83)
+const stat = __webpack_require__(82)
 
 function moveSync (src, dest, opts) {
   opts = opts || {}
@@ -66001,10 +66001,10 @@ module.exports = {
 const fs = __webpack_require__(12)
 const path = __webpack_require__(9)
 const copy = __webpack_require__(173).copy
-const remove = __webpack_require__(84).remove
+const remove = __webpack_require__(83).remove
 const mkdirp = __webpack_require__(21).mkdirp
 const pathExists = __webpack_require__(29).pathExists
-const stat = __webpack_require__(83)
+const stat = __webpack_require__(82)
 
 function move (src, dest, opts, cb) {
   if (typeof opts === 'function') {
@@ -67878,7 +67878,7 @@ module.exports = __webpack_require__(178);
 // This is the Node.JS entry point
 module.exports = algoliasearch;
 
-var debug = __webpack_require__(85)('algoliasearch:nodejs');
+var debug = __webpack_require__(84)('algoliasearch:nodejs');
 var crypto = __webpack_require__(149);
 var zlib = __webpack_require__(402);
 
@@ -67961,7 +67961,7 @@ function AlgoliaSearchNodeJS(applicationID, apiKey, opts) {
 inherits(AlgoliaSearchNodeJS, AlgoliaSearchServer);
 
 AlgoliaSearchNodeJS.prototype._request = function request(rawUrl, opts) {
-  var http = __webpack_require__(80);
+  var http = __webpack_require__(79);
   var https = __webpack_require__(51);
   var url = __webpack_require__(28);
 
@@ -72704,7 +72704,7 @@ var RESET_APP_DATA_TIMER =
  *           If you provide them, you will less benefit from our HA implementation
  */
 function AlgoliaSearchCore(applicationID, apiKey, opts) {
-  var debug = __webpack_require__(85)('algoliasearch');
+  var debug = __webpack_require__(84)('algoliasearch');
 
   var clone = __webpack_require__(36);
   var isArray = __webpack_require__(18);
@@ -72850,7 +72850,7 @@ AlgoliaSearchCore.prototype.addAlgoliaAgent = function(algoliaAgent) {
 AlgoliaSearchCore.prototype._jsonRequest = function(initialOpts) {
   this._checkAppIdData();
 
-  var requestDebug = __webpack_require__(85)('algoliasearch:' + initialOpts.url);
+  var requestDebug = __webpack_require__(84)('algoliasearch:' + initialOpts.url);
 
 
   var body;
@@ -73638,7 +73638,7 @@ function removeCredentials(headers) {
 /* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var debug = __webpack_require__(85)('algoliasearch:src/hostIndexState.js');
+var debug = __webpack_require__(84)('algoliasearch:src/hostIndexState.js');
 var localStorageNamespace = 'algoliasearch-client-js';
 
 var store;
@@ -73906,7 +73906,7 @@ function getParsedProxy() {
 }
 
 function getKeepaliveAgent(protocol) {
-  var http = __webpack_require__(80);
+  var http = __webpack_require__(79);
   var https = __webpack_require__(51);
 
   var HttpsAgent = __webpack_require__(188).HttpsAgent;
@@ -74428,7 +74428,7 @@ module.exports = HttpsAgent;
 
 var net = __webpack_require__(127)
   , tls = __webpack_require__(423)
-  , http = __webpack_require__(80)
+  , http = __webpack_require__(79)
   , https = __webpack_require__(51)
   , events = __webpack_require__(130)
   , assert = __webpack_require__(125)
@@ -83039,7 +83039,7 @@ module.exports = baseIsNative;
 /* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(86);
+var Symbol = __webpack_require__(85);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -83601,7 +83601,7 @@ var nodeUtil = (function() {
 
 module.exports = nodeUtil;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(82)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(81)(module)))
 
 /***/ }),
 /* 501 */
@@ -83890,7 +83890,7 @@ module.exports = listCacheClear;
 /* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(88);
+var assocIndexOf = __webpack_require__(87);
 
 /** Used for built-in method references. */
 var arrayProto = Array.prototype;
@@ -83931,7 +83931,7 @@ module.exports = listCacheDelete;
 /* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(88);
+var assocIndexOf = __webpack_require__(87);
 
 /**
  * Gets the list cache value for `key`.
@@ -83956,7 +83956,7 @@ module.exports = listCacheGet;
 /* 512 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(88);
+var assocIndexOf = __webpack_require__(87);
 
 /**
  * Checks if a list cache value for `key` exists.
@@ -83978,7 +83978,7 @@ module.exports = listCacheHas;
 /* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(88);
+var assocIndexOf = __webpack_require__(87);
 
 /**
  * Sets the list cache `key` to `value`.
@@ -84010,7 +84010,7 @@ module.exports = listCacheSet;
 /* 514 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ListCache = __webpack_require__(87);
+var ListCache = __webpack_require__(86);
 
 /**
  * Removes all key-value entries from the stack.
@@ -84095,7 +84095,7 @@ module.exports = stackHas;
 /* 518 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ListCache = __webpack_require__(87),
+var ListCache = __webpack_require__(86),
     Map = __webpack_require__(137),
     MapCache = __webpack_require__(138);
 
@@ -84136,7 +84136,7 @@ module.exports = stackSet;
 /***/ (function(module, exports, __webpack_require__) {
 
 var Hash = __webpack_require__(520),
-    ListCache = __webpack_require__(87),
+    ListCache = __webpack_require__(86),
     Map = __webpack_require__(137);
 
 /**
@@ -84200,7 +84200,7 @@ module.exports = Hash;
 /* 521 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(89);
+var nativeCreate = __webpack_require__(88);
 
 /**
  * Removes all key-value entries from the hash.
@@ -84244,7 +84244,7 @@ module.exports = hashDelete;
 /* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(89);
+var nativeCreate = __webpack_require__(88);
 
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -84280,7 +84280,7 @@ module.exports = hashGet;
 /* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(89);
+var nativeCreate = __webpack_require__(88);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -84309,7 +84309,7 @@ module.exports = hashHas;
 /* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(89);
+var nativeCreate = __webpack_require__(88);
 
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -84338,7 +84338,7 @@ module.exports = hashSet;
 /* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(90);
+var getMapData = __webpack_require__(89);
 
 /**
  * Removes `key` and its value from the map.
@@ -84383,7 +84383,7 @@ module.exports = isKeyable;
 /* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(90);
+var getMapData = __webpack_require__(89);
 
 /**
  * Gets the map value for `key`.
@@ -84405,7 +84405,7 @@ module.exports = mapCacheGet;
 /* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(90);
+var getMapData = __webpack_require__(89);
 
 /**
  * Checks if a map value for `key` exists.
@@ -84427,7 +84427,7 @@ module.exports = mapCacheHas;
 /* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(90);
+var getMapData = __webpack_require__(89);
 
 /**
  * Sets the map `key` to `value`.
@@ -84670,7 +84670,7 @@ module.exports = cacheHas;
 /* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(86),
+var Symbol = __webpack_require__(85),
     Uint8Array = __webpack_require__(538),
     eq = __webpack_require__(217),
     equalArrays = __webpack_require__(219),
@@ -85265,7 +85265,7 @@ var baseIsEqual = __webpack_require__(218),
     isKey = __webpack_require__(139),
     isStrictComparable = __webpack_require__(220),
     matchesStrictComparable = __webpack_require__(221),
-    toKey = __webpack_require__(91);
+    toKey = __webpack_require__(90);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -85515,7 +85515,7 @@ module.exports = toString;
 /* 560 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(86),
+var Symbol = __webpack_require__(85),
     arrayMap = __webpack_require__(561),
     isArray = __webpack_require__(32),
     isSymbol = __webpack_require__(140);
@@ -85649,7 +85649,7 @@ var castPath = __webpack_require__(223),
     isArray = __webpack_require__(32),
     isIndex = __webpack_require__(213),
     isLength = __webpack_require__(136),
-    toKey = __webpack_require__(91);
+    toKey = __webpack_require__(90);
 
 /**
  * Checks if `path` exists on `object`.
@@ -85719,7 +85719,7 @@ module.exports = identity;
 var baseProperty = __webpack_require__(567),
     basePropertyDeep = __webpack_require__(568),
     isKey = __webpack_require__(139),
-    toKey = __webpack_require__(91);
+    toKey = __webpack_require__(90);
 
 /**
  * Creates a function that returns the value at `path` of a given object.
@@ -86394,7 +86394,7 @@ var server = __webpack_require__(241);
 var server_default = /*#__PURE__*/__webpack_require__.n(server);
 
 // EXTERNAL MODULE: ./node_modules/react-helmet/es/Helmet.js
-var Helmet = __webpack_require__(92);
+var Helmet = __webpack_require__(91);
 
 // EXTERNAL MODULE: ./node_modules/react-loadable-ssr-addon/lib/index.js
 var lib = __webpack_require__(244);
@@ -86464,7 +86464,7 @@ const loadedModules=JSON.parse(JSON.stringify(chunkNames));Object.keys(loaded).f
 var core_package = __webpack_require__(264);
 
 // EXTERNAL MODULE: ./node_modules/react-router-config/esm/react-router-config.js
-var react_router_config = __webpack_require__(97);
+var react_router_config = __webpack_require__(96);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/core/lib/client/preload.js
 /**
@@ -86481,13 +86481,13 @@ var react_router_config = __webpack_require__(97);
  * @returns {Promise} Promise object represents whether pathname has been preloaded
  */function preload(routes,pathname){const matches=Object(react_router_config["a" /* matchRoutes */])(routes,pathname);return Promise.all(matches.map(match=>{const{component}=match.route;if(component&&component.preload){return component.preload();}return undefined;}));}
 // EXTERNAL MODULE: ./.docusaurus/docusaurus.config.js
-var docusaurus_config = __webpack_require__(106);
+var docusaurus_config = __webpack_require__(105);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/renderRoutes.js
-var renderRoutes = __webpack_require__(96);
+var renderRoutes = __webpack_require__(95);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/context.js
-var exports_context = __webpack_require__(95);
+var exports_context = __webpack_require__(94);
 
 // EXTERNAL MODULE: ./node_modules/nprogress/nprogress.js
 var nprogress = __webpack_require__(111);
